@@ -7,10 +7,6 @@ pipeline {
         GITHUB_TOKEN = credentials('github-pkumarcoverity')
         DETECT_PROJECT_NAME = "${env.REPO_NAME}"
     }
-    tools {
-        maven 'maven-3.9'
-        jdk 'openjdk-17'
-    }
     stages {
         stage('Build') {
             steps {
