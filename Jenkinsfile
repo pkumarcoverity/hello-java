@@ -6,7 +6,7 @@ pipeline {
         PRSCAN = "${env.CHANGE_TARGET ==~ /^(main|master|develop|stage|release)$/ ? 'true' : 'false'}"
         GITHUB_TOKEN = credentials('github-pkumarcoverity')
         DETECT_PROJECT_NAME = "${env.REPO_NAME}"
-        DETECT_EXCLUDED_DETECTOR_TYPES = GRADLE
+        DETECT_EXCLUDED_DETECTOR_TYPES = 'GRADLE'
     }
     stages {
         stage('Build') {
