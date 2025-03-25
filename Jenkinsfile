@@ -21,12 +21,6 @@ pipeline {
             }
         }
         stage('Black Duck') {
-            when {
-                anyOf {
-                    environment name: 'FULLSCAN', value: 'true'
-                    environment name: 'PRSCAN', value: 'true'
-                }
-            }
             steps {
                 security_scan product: 'blackducksca',
                     blackducksca_scan_failure_severities: 'BLOCKER',
