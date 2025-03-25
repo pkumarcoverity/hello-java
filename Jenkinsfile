@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B package'
-                echo $FULLSCAN
+                echo environment is "$FULLSCAN"
             }
         }
         stage('Black Duck') {
