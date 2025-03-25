@@ -26,9 +26,9 @@ pipeline {
             }
             steps {
                 security_scan product: 'blackducksca',
-                    blackduckscasca_scan_failure_severities: 'BLOCKER',
-                    blackduckscasca_prComment_enabled: true,
-                    blackduckscasca_reports_sarif_create: true,
+                    blackducksca_scan_failure_severities: 'BLOCKER',
+                    blackducksca_prComment_enabled: false,
+                    blackducksca_reports_sarif_create: false,
                     mark_build_status: 'UNSTABLE',
                     github_token: "$GITHUB_TOKEN",
                     include_diagnostics: false
