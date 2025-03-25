@@ -11,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B package'
+                echo $FULLSCAN
             }
         }
         stage('Black Duck') {
