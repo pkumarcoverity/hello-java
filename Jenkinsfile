@@ -10,8 +10,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B package'
-                echo environment is "$FULLSCAN"
+                sh 'mvn -B package'            
+            }
+        }
+        stage('Print Environment Variable') {
+            steps {
+                script {
+                    echo "The value of FULLSCAN is: ${env.FULLSCAN}"
+                }
             }
         }
         stage('Black Duck') {
